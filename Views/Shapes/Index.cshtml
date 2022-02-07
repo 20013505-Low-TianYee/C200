@@ -1,0 +1,209 @@
+﻿@model List<Shapes>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/lib/css/style.css" rel="stylesheet" />
+    <title>Home</title>
+
+	<style>
+.topnav {
+  background-image:linear-gradient(to right,#45AA9D ,#53CDBD);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ABF6DD;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #45AA9D;
+  color: white;
+}
+table {
+    -webkit-box-shadow: 10px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    10px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         10px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	  border-collapse: collapse;
+    width: 100%;
+    border-radius: 15px;
+	
+   
+    overflow:hidden
+	
+  }
+  .table tbody td.status .waiting {
+        background: #f3adaa;
+        color: #FC1905;
+    }
+
+.table tbody td.status .waiting:after {
+            background: #F12311;
+        }
+ .table tbody td .prod span {
+    display: block; }
+    .table tbody td .prod span:last-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3); }
+</style>
+
+</head>
+<body>
+	<div class="topnav">
+		
+  <a class="active" href="#home">4Shapes</a>
+  <a href="#cabinets">Cabinets</a>
+
+</div>
+
+	<section class="ftco-section">
+		@*Header*@
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md">
+					<h2 style ="color: red"><b>Urgent Need for Restock</b></h2>
+				</div>
+			</div>
+		
+			@*Urgent*@
+			<div class="row">
+				<div class="col-md-12" style="height:2px">
+						<table class="table">
+						  <thead>
+							  <tr>
+							  	<th><b>Product Name</b></th>
+							  	
+							  </tr>
+						  </thead>
+						  <tbody>
+							  @foreach(Shapes s in Model){
+								  if (s.RestockAmt > 2){
+						    <tr class="alert" role="alert">
+						    	
+								<td class="d-flex align-items-center">
+									@if(s.Id==1){
+												<div class="img" style="background-image: url(/lib/images/boxs.jpg);"></div>
+											} else if (s.Id == 2)
+											{
+												<div class="img" style="background-image: url(/lib/images/panadols.jpg);"></div>
+											}else if(s.Id == 3)
+											{
+												<div class="img" style="background-image: url(/lib/images/paracetemols.jpg);"></div>
+											}
+											else
+											{
+											<div class="img" style="background-image: url(/lib/images/coughs.jpg);"></div>
+
+											}
+
+									<div class="pl-3 prod">
+										<span style="color:red">@s.ProductName</span>
+										<span style="color: #57CBBB">@s.ShapeName</span>
+									</div>
+								</td>
+						     
+						     
+						    </tr>
+								  }
+						    }
+						    
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	</section>		  
+	
+
+	@*Table*@
+	
+		<section class="ftco-section">
+		@*Header*@
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md">
+					<h2 class="heading-section">Stocks Level</h2>
+				</div>
+			</div>
+		
+			@*Urgent*@
+			<div class="row">
+				<div class="col-md-12">
+						<table class="table">
+						  <thead>
+							  <tr>
+							  	<th>Product</th>
+							  	<th>Id</th>
+							  	<th>Restock Amt</th>
+							  	<th>Current Amt</th>
+							  	<th>Status</th>
+							  </tr>
+						  </thead>
+						  <tbody>
+							  @foreach(Shapes s in Model){
+						    <tr class="alert" role="alert">
+						    	
+								<td class="d-flex align-items-center">
+							@if(s.Id==1){
+												<div class="img" style="background-image: url(/lib/images/boxs.jpg);"></div>
+											} else if (s.Id == 2)
+											{
+												<div class="img" style="background-image: url(/lib/images/panadols.jpg);"></div>
+											}else if(s.Id == 3)
+											{
+												<div class="img" style="background-image: url(/lib/images/paracetemols.jpg);"></div>
+											}
+											else
+											{
+											<div class="img" style="background-image: url(/lib/images/coughs.jpg);"></div>
+
+											}
+									<div class="pl-3 prod">
+										<span>@s.ProductName</span>
+										<span style="color: #57CBBB">@s.ShapeName</span>
+									</div>
+								</td>
+						      <td>@s.Id</td>
+						      <td>@s.RestockAmt</td>
+						      <td>@s.CurrentAmt</td>
+							  @if(s.RestockAmt > 2 ){
+								<td class="status"><span class="waiting">Urgent</span></td>
+
+							  }else{
+						      <td class="status"><span class="active">Safe</span></td>
+							  }
+						    </tr>
+						   
+						    }
+						    
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>		  
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
