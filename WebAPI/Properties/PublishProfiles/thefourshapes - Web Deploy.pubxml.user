@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANLv6lyNGQ0ynEeldpjGUdQAAAAACAAAAAAAQZgAAAAEAACAAAAB1mLY7Kk0FMQrvjk6FT/++7bJ0/w4cZuJamqdcjo1YYQAAAAAOgAAAAAIAACAAAACQP8AoKeIeOlLXglnn9gb8S1ItZ9Gu37ej5ZKplU36pYAAAAApqFD5qLdoeXKJJBFCVB+QNzI9URMZ7WqVSeWM7VnFAz2z51m396cVnrT2MG4xQp6b8tLGpI6f0xvf2/b9lO1M4slh8fYy/gR+53ri/OchapCDhLgwg6Vf1N7lKrWXMQ3X5QJ1z1IzPpYI4cw1YaR/sZvS0OAKF0ZAS+GmW6Y8CkAAAABlh2BbAiyRq59k5u0dwCuOekx5gcnLjR5/0CXvzzxFTPsbr8RwpOOcKoQHiNh801nLQgwwD4ve2lw3438lmuTR</EncryptedPassword>
+    <History>True|2022-02-16T02:19:12.4084701Z;True|2022-02-16T10:14:35.8389335+08:00;True|2022-02-16T10:03:26.2461169+08:00;True|2022-02-16T09:59:39.4607196+08:00;False|2022-02-16T09:57:41.1559419+08:00;True|2022-02-16T09:37:51.8804673+08:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ProductionConnection">
+      <Value>Server=tcp:4shape.database.windows.net,1433%3bInitial Catalog=4shapes%3bPersist Security Info=False%3bUser ID=azureuser%3bPassword=TeamA2022%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=True%3bConnection Timeout=60%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
