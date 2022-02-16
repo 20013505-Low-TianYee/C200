@@ -1,0 +1,189 @@
+
+/* ******************************************************
+	Author URI: https://codeconvey.com/
+	Demo Purpose Only - May not require to add.
+	font-family: 'Work Sans', sans-serif;
+*********************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+article, header, section, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+
+
+a {
+	font-family: "Georgia",sans-serif;
+	text-decoration: none;
+	outline: none;
+}
+a:hover, a:focus {
+	color: #373e18;
+}
+section {
+    float: left;
+    width: 100%;
+	 margin-top:3em;
+	 margin-bottom:2em;
+}
+
+#float-right{
+	float:right;	
+}
+
+/* ******************************************************
+	Header
+*********************************************************/
+
+
+
+/* Header*/
+.ScriptHeader {
+    float: left;
+    width: 100%;
+    padding-top: 3em;
+}
+.rt-heading {
+
+    border-bottom: solid 4px #F8FFFB;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    display: table;
+    text-align: center;
+
+}
+.ScriptHeader h1 {
+    color: #11C68C;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+}
+.ScriptHeader h2 {
+    color: #11C68C;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5px 0 0;
+    line-height: normal;
+}
+
+.ScriptHeader h1 span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+	text-transform:uppercase;
+}
+.ScriptHeader span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+
+
+
+/* ******************************************************
+	Live Demo
+*********************************************************/
+
+
+
+
+
+/* ******************************************************
+	Responsive Grids
+*********************************************************/
+
+
+.rt-row:before, .rt-row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.rt-row:after {
+  clear: both;
+}
+[class^="col-rt-"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 15px;
+  min-height: 1px;
+  position: relative;
+}
+
+
+@media (min-width: 768px) {
+  .rt-container {
+    width: 260px;
+	float:right;
+	margin: 10px;
+  }
+  [class^="col-rt-"] {
+    float: left;
+    width: 49.9999999999%;
+  }
+  .col-rt-6, .col-rt-12 {
+    width: 500px;
+  }
+  
+}
+
+@media (min-width: 100px) {
+	.rt-container {
+		width: 500px;
+	}
+	.col-rt-1 {
+		width:16.6%;
+	}
+	.col-rt-2 {
+		width:30.33%;
+	}
+	.col-rt-3 {
+		width:50%;
+	}
+	.col-rt-4 {
+		width: 67.664%;
+	}
+	.col-rt-5 {
+		width: 83.33%;
+	}
+	
+
+}
+
+@media only screen and (min-width:140px) and (max-width: 200px){
+	
+	
+	.ScriptHeader h1,
+	.ScriptHeader h2, 
+	.scriptnav ul{
+		text-align:center;	
+	}
+	.scriptnav ul{
+		 margin-top:12px;		
+	}
+	#float-right{
+		float:none;	
+	}
+	
+}
+
+
+
+

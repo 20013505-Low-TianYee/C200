@@ -1,0 +1,56 @@
+﻿@model Staff
+@section MoreScripts{
+         <link href="~/lib/login/demo.css" rel="stylesheet" />
+     <link href="~/lib/login/style.css" rel="stylesheet" />
+
+    }
+
+<div class="body"></div>
+    <div class="rt-container">
+    </div>
+
+
+<header class="ScriptHeader">
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="rt-heading">
+                <h1><b>4Shapes</b></h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="simpleLogin">
+                
+                <form asp-controller="Account"
+                      asp-action="Login"
+                      method="post">
+                    <fieldset>
+                        <i class="fa fa-user icon"></i>
+                        <input id="name" asp-for="StaffID" placeholder="StaffID" type="text">
+                        <span asp-validation-for="StaffID" class="text-danger"></span>
+                        <i class="fa fa-key icon"></i>
+                        <input id="pass" asp-for="Password" placeholder="Password" type="password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <input id="submit" type="submit" value="Log in">
+                    </fieldset>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+   
+        @if (ViewData["Message"] != null)
+{
+    <div class="form-group row">
+        <div class="alert alert-@ViewData["MsgType"]">
+            <text>@ViewData["Message"]</text>
+        </div>
+    </div>
+}

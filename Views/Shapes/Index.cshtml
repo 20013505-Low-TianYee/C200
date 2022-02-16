@@ -1,0 +1,193 @@
+﻿ @section MoreScripts{
+<link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+    function timedRefresh(timeoutPeriod) {
+       var timer = setInterval(function() {
+           clearInterval(timer);
+                window.location.href = window.location.href;
+       }, 4000); //refresh every 4s so that when use come back to the website later, the data is updated 
+                    //without the need to click on refresh button.
+                   
+    };
+    timedRefresh();
+
+</script>
+    }
+
+
+@model List<Shapes>
+
+<partial name="SovNavBar" />
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md">
+            <h2 style="color: red"><b>Urgent Need for Restock</b></h2>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><b>Product Name</b></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Shapes s in Model)
+
+                    {
+                        if (s.RestockAmt >= s.CurrentAmt)
+
+                        {
+                            <tr class="alert" role="alert">
+
+                                <td class="d-flex align-items-center">
+                                    @if (s.Id == 1)
+
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/boxs.jpg);"></div>
+                                    }
+
+                                    else if (s.Id == 2)
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/panadols.jpg);"></div>
+                                    }
+
+                                    else if (s.Id == 3)
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/paracetemols.jpg);"></div>
+                                    }
+                                    else
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/coughs.jpg);"></div>
+
+                                    }
+
+                                    <div class="pl-3 prod">
+                                        <span style="color:red;">@s.ProductName</span>
+                                        <span style="color: #57CBBB;">@s.ShapeName</span>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                        }
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+@*Table*@
+<div>
+
+    @*Header*@
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md">
+                <h2 class="heading-section">Stocks Level</h2>
+            </div>
+        </div>
+
+        @*Urgent*@
+        <div class="row">
+            <div class="col-md-12">
+                <table id="JSShapesTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Id</th>
+                            <th>Restock Amt</th>
+                            <th>Current Amt</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Shapes s in Model)
+
+                        {
+                            <tr class="alert" role="alert">
+
+
+                                <td class="d-flex align-items-center">
+                                    @if (s.Id == 1)
+
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/boxs.jpg);"></div>
+                                    }
+
+                                    else if (s.Id == 2)
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/panadols.jpg);"></div>
+                                    }
+
+                                    else if (s.Id == 3)
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/paracetemols.jpg);"></div>
+                                    }
+                                    else
+                                    {
+                                        <div class="img" style="background-image: url(/lib/images/coughs.jpg);"></div>
+
+                                    }
+                                    <div class="pl-3 prod">
+                                        <span>@s.ProductName</span>
+                                        <span style="color: #57CBBB">@s.ShapeName</span>
+                                    </div>
+                                </td>
+                                <td>@s.Id</td>
+                                <td>@s.RestockAmt</td>
+                                <td>@s.CurrentAmt</td>
+                                @if (s.RestockAmt >= s.CurrentAmt)
+
+                                {
+                                    <td class="status"><span class="waiting">Urgent</span></td>
+
+                                }
+
+                                else
+
+                                {
+                                    <td class="status"><span class="active">Safe</span></td>
+                                }
+                            </tr>
+
+
+                        }
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+
+
